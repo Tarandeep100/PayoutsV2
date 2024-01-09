@@ -34,13 +34,13 @@ const AppBar = () => {
           <Row>
             <TextField
               id="outlined-start-adornment"
+              placeholder="Search features, tutorials, etc."
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
                     <IconButton>
                       <img src={Search} alt="search" />
                     </IconButton>
-                    Search features, tutorials, etc.
                   </InputAdornment>
                 ),
               }}
