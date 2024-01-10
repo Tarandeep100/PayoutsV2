@@ -3,10 +3,10 @@ import { DataGrid } from '@mui/x-data-grid';
 
 const PaymentsTable = () => {
   const columns = [
-    { field: "orderId", headerName: "Order ID", width: 70, valueGetter: (params) => `#${params.row.orderAmount}`  },
-    { field: "orderDate", headerName: "Order date", width: 130 },
-    { field: "orderAmount", headerName: "Order amount", width: 130, valueGetter: (params) => `$${params.row.orderAmount}` },
-    { field: "transactionFees", headerName: "Transaction fees", width: 130, valueGetter: (params) => `$${params.row.transactionFees}` },
+    { field: "orderId", headerName: "Order ID", valueGetter: (params) => `#${params.row.orderAmount}`  },
+    { field: "orderDate", headerName: "Order date"},
+    { field: "orderAmount", headerName: "Order amount", valueGetter: (params) => `$${params.row.orderAmount}` },
+    { field: "transactionFees", headerName: "Transaction fees", valueGetter: (params) => `$${params.row.transactionFees}` },
     // {
     //   field: "age",
     //   headerName: "Age",
@@ -46,14 +46,14 @@ const PaymentsTable = () => {
   ];
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
+    <div style={{ height: '50%', width: '100%' }}>
+      <DataGrid  sx={{ m: 2 }} 
       getRowId={(row) => row.orderId}
         rows={rows}
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: { page: 0, pageSize: 10 },
           },
         }}
       />
